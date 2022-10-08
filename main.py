@@ -9,7 +9,7 @@ def main():
     method_index = 3
     accuracy = 0.001
     x = [0, 0]
-    h = [0, 0]
+    h = [1, 1]
     grad = []
     f = functions.Functions(function_index)
 
