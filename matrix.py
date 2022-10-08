@@ -2,6 +2,26 @@ import functions
 from math import sqrt
 
 
+def mul(a: list, b: (float, list)):
+    result = []
+
+    if type(b) == float:
+        for i in range(len(a)):
+            result.append(a[i].copy())
+
+        for row in range(len(a)):
+            for col in range(len(a)):
+                result[row][col] *= b
+    else:
+        for i in range(len(a)):
+            temp = 0
+            for j in range(len(a)):
+                temp += a[i][j] * b[j]
+            result.append(temp)
+
+    return result
+
+
 def norm(x: list):
     result = 0
     for i in range(len(x)):
@@ -23,26 +43,6 @@ def gesse_matrix(f: functions.Functions, x: list):
         result.append([])
         for j in range(1, len(x) + 1):
             result[i - 1].append(f.dif2(x, i, j))
-    return result
-
-
-def mul(a: list, b: (float, list)):
-    result = []
-
-    if type(b) == float:
-        for i in range(len(a)):
-            result.append(a[i].copy())
-
-        for row in range(len(a)):
-            for col in range(len(a)):
-                result[row][col] *= b
-    else:
-        for i in range(len(a)):
-            temp = 0
-            for j in range(len(a)):
-                temp += a[i][j] * b[j]
-            result.append(temp)
-
     return result
 
 

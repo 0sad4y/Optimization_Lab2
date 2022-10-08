@@ -4,12 +4,6 @@ class Functions:
     def __init__(self, num: int):
         self.function_number = num
 
-    @staticmethod
-    def check_result(result):
-        if 0.000001 > result > -0.000001:
-            result = 0.0
-        return result
-
     def func(self, x: tuple):
         result = None
         if self.function_number == 1:
@@ -22,7 +16,7 @@ class Functions:
         elif self.function_number == 4:
             result = (x[0] + 10 * x[1]) ** 2 + 5 * (x[2] - x[3]) ** 2 + (x[1] - 2 * x[2]) ** 4 + \
                      + 10 * (x[0] - x[3]) ** 4
-        result = self.check_result(result)
+        result = round(result, 4)
         return result
 
     def dif1(self, x: list, var_num: int):
@@ -32,7 +26,7 @@ class Functions:
         arguments[var_num - 1] -= self.h * 2
         b = self.func(tuple(arguments))
         result = (a - b) / (2 * self.h)
-        result = self.check_result(result)
+        result = round(result, 4)
         return result
 
     def dif2(self, x: list, first_var_num: int, second_var_num: int):
@@ -42,5 +36,5 @@ class Functions:
         arguments[first_var_num - 1] -= self.h * 2
         b = self.dif1(arguments, second_var_num)
         result = (a - b) / (2 * self.h)
-        result = self.check_result(result)
+        result = round(result, 4)
         return result
