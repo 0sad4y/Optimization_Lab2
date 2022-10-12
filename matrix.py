@@ -5,7 +5,7 @@ from math import sqrt
 def mul(a: list, b: (int, float, list)):
     result = []
 
-    if type(b) == float and type(b) == int:
+    if type(b) == float or type(b) == int:
         if type(a[0]) != list:
             result = a.copy()
             for i in range(len(a)):
@@ -29,19 +29,15 @@ def mul(a: list, b: (int, float, list)):
 
 def add(a: list, b: list):
     result = []
-    for row in range(len(a)):
-        result.append([])
-        for col in range(len(a)):
-            result[row].append(a[row][col] + b[row][col])
+    for i in range(len(a)):
+        result.append(a[i] + b[i])
     return result
 
 
 def sub(a: list, b: list):
     result = []
-    for row in range(len(a)):
-        result.append([])
-        for col in range(len(a)):
-            result[row].append(a[row][col] - b[row][col])
+    for i in range(len(a)):
+        result.append(a[i] - b[i])
     return result
 
 
