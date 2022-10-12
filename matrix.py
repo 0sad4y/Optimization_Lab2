@@ -2,16 +2,21 @@ import functions
 from math import sqrt
 
 
-def mul(a: list, b: (float, list)):
+def mul(a: list, b: (int, float, list)):
     result = []
 
-    if type(b) == float:
-        for i in range(len(a)):
-            result.append(a[i].copy())
+    if type(b) == float and type(b) == int:
+        if type(a[0]) != list:
+            result = a.copy()
+            for i in range(len(a)):
+                result[i] *= b
+        else:
+            for i in range(len(a)):
+                result.append(a[i].copy())
 
-        for row in range(len(a)):
-            for col in range(len(a)):
-                result[row][col] *= b
+            for row in range(len(a)):
+                for col in range(len(a)):
+                    result[row][col] *= b
     else:
         for i in range(len(a)):
             temp = 0
