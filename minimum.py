@@ -6,6 +6,7 @@ def find_minimum(alp: alpha.Alpha):
     step = 0.1
     a = 0
     b = 0
+    k = 0
     accuracy = 0.001
     difference = accuracy / 10
     is_finished = False

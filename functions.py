@@ -4,7 +4,7 @@ class Functions:
     def __init__(self, num: int):
         self.function_number = num
 
-    def func(self, x: tuple):
+    def func(self, x: list):
         result = None
         if self.function_number == 1:
             result = 4 * (x[0] - 5) ** 2 + (x[1] - 6) ** 2
@@ -22,9 +22,9 @@ class Functions:
     def dif1(self, x: list, var_num: int):
         arguments = x.copy()
         arguments[var_num - 1] += self.h
-        a = self.func(tuple(arguments))
+        a = self.func(arguments)
         arguments[var_num - 1] -= self.h * 2
-        b = self.func(tuple(arguments))
+        b = self.func(arguments)
         result = (a - b) / (2 * self.h)
         result = round(result, 4)
         return result

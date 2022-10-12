@@ -22,6 +22,6 @@ class Alpha:
         for i in range(len(self.x)):
             arguments.append(self.x[i] + sign * a * self.y[i])
 
-        result = self.f.func(tuple(arguments))
+        result = self.f.func(arguments)
 
         return result
