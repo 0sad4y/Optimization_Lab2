@@ -22,6 +22,24 @@ def mul(a: list, b: (float, list)):
     return result
 
 
+def add(a: list, b: list):
+    result = []
+    for row in range(len(a)):
+        result.append([])
+        for col in range(len(a)):
+            result[row].append(a[row][col] + b[row][col])
+    return result
+
+
+def sub(a: list, b: list):
+    result = []
+    for row in range(len(a)):
+        result.append([])
+        for col in range(len(a)):
+            result[row].append(a[row][col] - b[row][col])
+    return result
+
+
 def norm(x: list):
     result = 0
     for i in range(len(x)):
