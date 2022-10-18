@@ -5,13 +5,24 @@ import alpha
 
 
 def main():
-    function_index = 4
-    method_index = 3
+    def input_list_of_int(msg=''):
+        string = input(msg)
+        ls = string.split(' ')
+
+        res = []
+        for j in range(len(ls)):
+            res.append(int(ls[j]))
+
+        return res
+
+    function_index = int(input('Введите номер функции: '))
+    method_index = int(input('Введите номер метода: '))
+    x = input_list_of_int('Введите начальную точку: ')
+    h = input_list_of_int('Введите шаг: ')
+
     accuracy = 0.001
     z = 0.1
     result = 0
-    x = [3, -1, 0, 1]
-    h = [1, 1, 1, 1]
     f = functions.Functions(function_index)
 
     if method_index == 1:
