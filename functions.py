@@ -16,7 +16,7 @@ class Functions:
         elif self.function_number == 4:
             result = (x[0] + 10 * x[1]) ** 2 + 5 * (x[2] - x[3]) ** 2 + (x[1] - 2 * x[2]) ** 4 + \
                      + 10 * (x[0] - x[3]) ** 4
-        result = round(result, 4)
+        result = round(result, 6)
         return result
 
     def dif1(self, x: list, var_num: int):
