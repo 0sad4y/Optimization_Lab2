@@ -92,6 +92,8 @@ def main():
 
             h = matrix.gesse_matrix(f, x)
             h = matrix.inverse_matrix(h)
+            if len(h) == 0:
+                break
             p = matrix.mul(matrix.mul(h, -1.0), grad)
 
             a = alpha.Alpha(f, x, p, True)
